@@ -53,8 +53,9 @@ function RecordRTC_Extension(config) {
         sendBlobInMessage: true,
         saveFileAsDownload: false,
         saveFileName: null,
-        videoCodec: 'Default',
+        videoCodec: 'VP9',
         bitsPerSecond: 8000000000,
+        videoMaxFrameRates: 60 ,
     };
 
     var startCallback = function() {
@@ -80,6 +81,7 @@ function RecordRTC_Extension(config) {
         'saveFileName',
         'videoCodec',
         'bitsPerSecond',
+        'videoMaxFrameRates',
     ];
 
     window.addEventListener('message', function(event) {

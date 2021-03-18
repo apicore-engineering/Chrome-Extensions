@@ -72,6 +72,7 @@ chrome.runtime.onConnect.addListener(function(port) {
                 saveFileName = 'saveFileName' in message ? message['saveFileName'] : null;
                 videoCodec = 'videoCodec' in message ? message['videoCodec'] : 'Default';
                 bitsPerSecond = 'bitsPerSecond' in message ? message['bitsPerSecond'] : 8000000000;
+                videoMaxFrameRates = 'videoMaxFrameRates' in message ? message['videoMaxFrameRates'] : 60;
 
                 startRecordingCallback = function(file) {
                     port.postMessage({
@@ -95,6 +96,7 @@ chrome.runtime.onConnect.addListener(function(port) {
                     saveFileName: saveFileName ? `${saveFileName}` : 'null',
                     videoCodec: videoCodec,
                     bitsPerSecond: bitsPerSecond,
+                    videoMaxFrameRates: videoMaxFrameRates,
                 }, function() {
                     getUserConfigs();
                 });

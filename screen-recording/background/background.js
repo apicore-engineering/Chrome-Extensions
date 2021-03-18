@@ -48,9 +48,9 @@ function gotStream(stream) {
 
     if (bitsPerSecond) {
         bitsPerSecond = parseInt(bitsPerSecond);
-        if (!bitsPerSecond || bitsPerSecond < 100) {
-            bitsPerSecond = 8000000000; // 1 GB /second
-        }
+    }
+    if (!bitsPerSecond || bitsPerSecond < 100) {
+        bitsPerSecond = 8000000000; // 1 GB /second
     }
 
     if (bitsPerSecond) {
